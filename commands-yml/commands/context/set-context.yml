@@ -34,10 +34,10 @@ example_usage:
       await driver.context('NATIVE_APP');
   javascript_wdio:
     |
-      let contexts = driver.contexts();
-      driver.context(contexts[1]);
+      let contexts = driver.getContexts();
+      driver.setContext(contexts[1]);
       // ...
-      driver.context('NATIVE_APP');
+      driver.setContext('NATIVE_APP');
   ruby:
     |
       webview = available_contexts[1]
@@ -58,7 +58,15 @@ example_usage:
       $driver->context('NATIVE_APP');
   csharp:
     |
-      // TODO C# sample
+    // Switch to specific webview
+      List<string> AllContexts = new List<string>();
+        foreach (var context in (driver.Contexts))
+        {
+            AllContexts.Add(context);
+        }
+      driver.Context = (AllContexts[1]);
+     // Switch to NATIVE_APP
+     driver.Context = ("NATIVE_APP");
 
 client_docs:
   java: "https://appium.github.io/java-client/io/appium/java_client/AppiumDriver.html#context-java.lang.String-"

@@ -78,6 +78,7 @@
     <li><a href='/docs/en/commands/device/network/gsm-call.md'>GSM Call</a></li>
     <li><a href='/docs/en/commands/device/network/gsm-signal.md'>GSM Signal</a></li>
     <li><a href='/docs/en/commands/device/network/gsm-voice.md'>GSM Voice</a></li>
+    <li><a href='/docs/en/commands/device/network/network-speed.md'>Network Speed</a></li>
 </ul></li>
     <li><a href='/docs/en/commands/device/performance-data'>Performance Data</a><ul>    <li><a href='/docs/en/commands/device/performance-data/get-performance-data.md'>Get Performance Data</a></li>
     <li><a href='/docs/en/commands/device/performance-data/performance-data-types.md'>Performance Data Types</a></li>
@@ -91,6 +92,7 @@
     <li><a href='/docs/en/commands/device/system'>System</a><ul>    <li><a href='/docs/en/commands/device/system/open-notifications.md'>Open Notifications</a></li>
     <li><a href='/docs/en/commands/device/system/system-bars.md'>System Bars</a></li>
     <li><a href='/docs/en/commands/device/system/system-time.md'>System Time</a></li>
+    <li><a href='/docs/en/commands/device/system/display-density.md'>Display density</a></li>
 </ul></li>
     <li><a href='/docs/en/commands/device/authentication'>Authentication</a><ul>    <li><a href='/docs/en/commands/device/authentication/finger-print.md'>Finger Print</a></li>
 </ul></li>

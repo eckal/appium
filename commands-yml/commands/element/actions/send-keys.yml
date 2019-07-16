@@ -21,7 +21,7 @@ example_usage:
       await element.type("Hello world!")
   javascript_wdio:
     |
-      driver.setValue("~SomeAccessibilityId");
+      $("~SomeAccessibilityId").addValue("Enter");
   ruby:
     |
       find_element(:accessibility_id, "SomeAccessibilityID").send_keys("Hello World!")
@@ -71,7 +71,7 @@ client_support:
 
 # Information about the HTTP endpoints
 endpoint:
-  url: /wd/hub/session/:session_id/element/value
+  url: /wd/hub/session/:session_id/element/:element_id/value
   method: 'POST'
   url_parameters:
     - name: session_id

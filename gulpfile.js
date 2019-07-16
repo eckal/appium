@@ -12,10 +12,10 @@ const path = require('path');
 const fs = require('fs');
 const log = require('fancy-log');
 
-
 // remove 'fsevents' from shrinkwrap, since it causes errors on non-Mac hosts
 // see https://github.com/npm/npm/issues/2679
-gulp.task('fixShrinkwrap', function (done) {
+
+gulp.task('fixShrinkwrap', function fixShrinkwrap (done) {
   let shrinkwrap;
   try {
     shrinkwrap = require('./npm-shrinkwrap.json');
@@ -24,6 +24,7 @@ gulp.task('fixShrinkwrap', function (done) {
               `(Original error: ${err.message})`);
     return done();
   }
+
   delete shrinkwrap.dependencies.fsevents;
   const shrinkwrapString = JSON.stringify(shrinkwrap, null, '  ') + '\n';
   fs.writeFile('./npm-shrinkwrap.json', shrinkwrapString, done);
@@ -42,12 +43,11 @@ boilerplate({
   test: {
     files: ['${testDir}/**/*-specs.js']
   },
-  extraPrepublishTasks: ['fixShrinkwrap'],
   preCommitTasks: ['eslint', 'once'],
 });
 
 // generates server arguments readme
-gulp.task('docs', gulp.series(['transpile']), function () {
+gulp.task('docs', gulp.series(['transpile']), function parseDocs () {
   const parser = require('./build/lib/parser.js');
   const appiumArguments = parser.getParser().rawArgs;
   const docFile = path.resolve(__dirname, 'docs/en/writing-running-appium/server-args.md');
@@ -61,7 +61,7 @@ gulp.task('docs', gulp.series(['transpile']), function () {
   md += '\n\n<expand_table>\n\n';
   md += '|Flag|Default|Description|Example|\n';
   md += '|----|-------|-----------|-------|\n';
-  appiumArguments.forEach(function (arg) {
+  appiumArguments.forEach(function handleArguments (arg) {
     const argNames = arg[0];
     const exampleArg = typeof arg[0][1] === 'undefined' ? arg[0][0] : arg[0][1];
     const argOpts = arg[1];
@@ -85,11 +85,11 @@ gulp.task('docs', gulp.series(['transpile']), function () {
     md += '|\n';
   });
 
-  fs.writeFile(docFile, md, function (err) {
+  fs.writeFile(docFile, md, function finishDocs (err) {
     if (err) {
       log(err.stack);
     } else {
-      log("New docs written! Don't forget to commit and push");
+      log('New docs written! Do not forget to commit and push');
     }
   });
 });

@@ -26,10 +26,10 @@ driver.switch_to.context('NATIVE_APP')
 ```javascript
 // Javascript
 // webdriver.io example
-let contexts = driver.contexts();
-driver.context(contexts[1]);
+let contexts = driver.getContexts();
+driver.setContext(contexts[1]);
 // ...
-driver.context('NATIVE_APP');
+driver.setContext('NATIVE_APP');
 
 // wd example
 let contexts = await driver.contexts();
@@ -66,7 +66,15 @@ $driver->context('NATIVE_APP');
 
 ```csharp
 // C#
-// TODO C# sample
+// Switch to specific webview
+  List<string> AllContexts = new List<string>();
+    foreach (var context in (driver.Contexts))
+    {
+        AllContexts.Add(context);
+    }
+  driver.Context = (AllContexts[1]);
+ // Switch to NATIVE_APP
+ driver.Context = ("NATIVE_APP");
 
 ```
 

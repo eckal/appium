@@ -7,13 +7,17 @@ example_usage:
     |
       List<MobileElement> element = (MobileElement) driver.findElementByAccessibilityId("SomeAccessibilityID");
       Rectangle rect = element.getRect();
+  python:
+    |
+      element = self.driver.find_element_by_accessibility_id('SomeAccessibilityID')
+      element.rect
   javascript_wd:
     |
       let element = await driver.elementByAccessibilityId("SomeAccessibilityID");
       let rect = await element.getRect();
   javascript_wdio:
     |
-      let rect = driver.elementIdRect("~SomeAccessibilityId");
+      let rect = driver.getElementRect("~SomeAccessibilityId");
   ruby:
     |
       element = find_element :accessibility_id, "SomeAccessibilityID"
@@ -79,7 +83,7 @@ endpoint:
     - name: height
       type: number
       description: Height of the bounding rectangle
-    - name: weight
+    - name: width
       type: number
       description: Width of the bounding rectangle
 # Links to specifications. Should link to at least one specification

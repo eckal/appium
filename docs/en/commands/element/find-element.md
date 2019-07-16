@@ -21,7 +21,7 @@ el = self.driver.find_element_by_accessibility_id('SomeAccessibilityID')
 ```javascript
 // Javascript
 // webdriver.io example
-driver.element("~SomeAccessibilityId");
+$("~SomeAccessibilityId");
 
 // wd example
 let elementOne = await driver.elementByAccessibilityId("SomeAccessibilityID");
@@ -47,7 +47,8 @@ $el = $this->byAccessibilityId('SomeAccessibilityID');
 
 ```csharp
 // C#
-// TODO C# sample
+AndroidElement elementOne = driver.FindElementByAccessibilityID("Some ID");
+AndroidElement elementTwo = driver.FindElementByClassName("Some class");
 
 ```
 

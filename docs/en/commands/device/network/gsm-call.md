@@ -12,11 +12,16 @@ driver.makeGsmCall("5551234567", GsmCallActions.CALL);
 ```
 
 ```python
-# Not supported
+# Python
+self.driver.make_gsm_call('5551234567', GsmCallActions.CALL)
+
 ```
 
 ```javascript
-// Not supported
+// Javascript
+// webdriver.io example
+driver.gsmCall('555-123-4567', 'call');
+
 // wd example
 await driver.gsmCall('555-123-4567', 'Phone');
 
@@ -55,8 +60,8 @@ gsm_call(phone_number: '5551234567', action: :call)
 |--------|----------------|------|--------------|--------------|
 | iOS | [XCUITest](/docs/en/drivers/ios-xcuitest.md) | None | None | None |
 |  | [UIAutomation](/docs/en/drivers/ios-uiautomation.md) | None | None | None |
-| Android | [UiAutomator2](/docs/en/drivers/android-uiautomator2.md) | None | None | None |
-|  | [Espresso](/docs/en/drivers/android-espresso.md) | None | None | None |
+| Android | [UiAutomator2](/docs/en/drivers/android-uiautomator2.md) | ?+ | 1.6.0+ | All |
+|  | [Espresso](/docs/en/drivers/android-espresso.md) | ?+ | 1.9.0+ | All |
 |  | [UiAutomator](/docs/en/drivers/android-uiautomator.md) | 4.2+ | All | All |
 | Mac | [Mac](/docs/en/drivers/mac.md) | None | None | None |
 | Windows | [Windows](/docs/en/drivers/windows.md) | None | None | None |
@@ -68,7 +73,7 @@ gsm_call(phone_number: '5551234567', action: :call)
 |Language|Support|Documentation|
 |--------|-------|-------------|
 |[Java](https://github.com/appium/java-client/releases/latest)| All | [appium.github.io](https://appium.github.io/java-client/io/appium/java_client/android/SupportsSpecialEmulatorCommands.html#makeGsmCall-java.lang.String-io.appium.java_client.android.GsmCallActions-) |
-|[Python](https://github.com/appium/python-client/releases/latest)| None |  |
+|[Python](https://github.com/appium/python-client/releases/latest)| All | [github.com](https://github.com/appium/python-client) |
 |[Javascript (WebdriverIO)](http://webdriver.io/index.html)| All |  |
 |[Javascript (WD)](https://github.com/admc/wd/releases/latest)| All | [github.com](https://github.com/admc/wd/blob/master/lib/commands.js#L3183) |
 |[Ruby](https://github.com/appium/ruby_lib/releases/latest)| All | [www.rubydoc.info](https://www.rubydoc.info/github/appium/ruby_lib_core/master/Appium/Core/Android/Device/Emulator#gsm_call-instance_method) |

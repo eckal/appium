@@ -15,6 +15,7 @@ using the [iOS Predicate](/docs/en/writing-running-appium/ios/ios-predicate.md) 
     * `-ios uiautomation` for iOS 9.3 and below
 * `-android uiautomator`: a string corresponding to a recursive element
 search using the [UiAutomator Api](/docs/en/writing-running-appium/android/uiautomator-uiselector.md) (Android-only)
+* `-android datamatcher`: a string corresponding to an [Espresso DataMatcher json](/docs/en/writing-running-appium/android/espresso-datamatcher-uiselector.md) (Android-only)
 * `accessibility id`: a string corresponding to a recursive element search
 using the Id/Name that the native Accessibility options utilize.
 
@@ -40,7 +41,7 @@ image, or locating it in the source tree.
 Appium Desktop has a simple layout, complete with a source tree,
 a screenshot, and record and refresh buttons, and interaction tools.
 
-![](https://github.com/appium/appium-desktop/blob/master/docs/images/screen-inspector-and-logs.png)
+![](https://github.com/appium/appium-desktop/raw/master/docs/images/screen-inspector-and-logs.png)
 
 ### Example
 
@@ -59,4 +60,4 @@ interactive language shell. You can invoke various command interactively. It
 will help you to make sure your scenarios interactively with Appium server.
 
 - [Appium Ruby Console](https://github.com/appium/ruby_console)
-- [WebDriverIO with debug mode](http://webdriver.io/api/utility/debug.html)
+- [WebDriverIO with debug mode](https://webdriver.io/docs/api/browser/debug.html)

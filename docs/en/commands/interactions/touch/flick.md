@@ -26,7 +26,7 @@ actions.perform()
 ```javascript
 // Javascript
 // webdriver.io example
-driver.touchFlick('<ELEMENT_ID>', 1, 10, 10);
+driver.touchFlick(10, 10, element, 1);
 
 // wd example
 await element.flick(1, 10, 10);
@@ -66,8 +66,8 @@ touch_action.flick(element, 1, 10, 10).perform
 |--------|----------------|------|--------------|--------------|
 | iOS | [XCUITest](/docs/en/drivers/ios-xcuitest.md) | 9.3+ | 1.6.0+ | All |
 |  | [UIAutomation](/docs/en/drivers/ios-uiautomation.md) | 8.0 to 9.3 | All | All |
-| Android | [UiAutomator2](/docs/en/drivers/android-uiautomator2.md) | ?+ | 1.6.0+ | All |
-|  | [Espresso](/docs/en/drivers/android-espresso.md) | None | None | None |
+| Android | [Espresso](/docs/en/drivers/android-espresso.md) | None | None | None |
+|  | [UiAutomator2](/docs/en/drivers/android-uiautomator2.md) | ?+ | 1.6.0+ | All |
 |  | [UiAutomator](/docs/en/drivers/android-uiautomator.md) | 4.2+ | All | All |
 | Mac | [Mac](/docs/en/drivers/mac.md) | ?+ | 1.6.4+ | All |
 | Windows | [Windows](/docs/en/drivers/windows.md) | 10+ | 1.6.0+ | All |

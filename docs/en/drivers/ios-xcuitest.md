@@ -46,6 +46,29 @@ the value `XCUITest`. Of course, you must also include appropriate
 `platformName`, `platformVersion`, `deviceName`, and `app` capabilities, at
 a minimum.
 
+The `platformName` should be `iOS` for iPhone or iPad. tvOS devices are available if the `platformName` is `tvOS`.
+
+- iOS
+   ```json
+   {
+      "automationName": "XCUITest",
+      "platformName": "iOS",
+      "platformVersion": "12.2",
+      "deviceName": "iPhone 8",
+      ...
+   }
+   ```
+- tvOS
+   ```json
+   {
+      "automationName": "XCUITest",
+      "platformName": "tvOS",
+      "platformVersion": "12.2",
+      "deviceName": "Apple TV",
+      ...
+   }
+   ```
+
 ### Capabilities
 
 The XCUITest driver supports a number of standard [Appium
@@ -99,18 +122,12 @@ following desired capabilities:
 * `udid` - the specific id of the device to test on. This can also be set to
    `auto` if there is only a single device, in which case Appium will determine
    the device id and use it.
-   
+
 ### Optional Setup
 
-* Install FBSimulatorControl for better handling of various iOS Simulator operations, 
+* Install idb for better handling of various iOS Simulator operations,
 such as: biometrics, geolocation setting and window focussing.
-
-```
-# Get the Facebook Tap.
-brew tap facebook/fb
-# Install fbsimctl from master
-brew install fbsimctl --HEAD
-```
+    * Read https://github.com/appium/appium-idb#installation to install necessary libraries (since Appium 1.14.0)
 
 * Install [AppleSimulatorUtils](https://github.com/wix/AppleSimulatorUtils)
 to use the [permissions capability](https://github.com/appium/appium-xcuitest-driver#desired-capabilities)
@@ -125,3 +142,11 @@ following locations are where they are found, should they need to be deleted:
 $HOME/Library/Logs/CoreSimulator/*
 $HOME/Library/Developer/Xcode/DerivedData/*
 ```
+
+### Configure keyboards
+Over Appium 1.14.0, Appium configures keyboard preferences by default to make test running more stable. You can change sone of them via settings API.
+
+- Turn `Auto-Correction` in _Keyboards_ off
+- Turn `Predictive` in _Keyboards_ off
+- Mark keyboard tutorial as complete
+- (Only for Simulator) Toggle software keyboard on

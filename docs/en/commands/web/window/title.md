@@ -13,14 +13,14 @@ String title = driver.getTitle();
 
 ```python
 # Python
-title = self.driver.title()
+title = self.driver.title
 
 ```
 
 ```javascript
 // Javascript
 // webdriver.io example
-let handle = driver.title();
+let handle = driver.getTitle();
 
 // wd example
 let title = await driver.title();

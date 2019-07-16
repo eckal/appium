@@ -20,7 +20,7 @@ contexts = driver.contexts
 ```javascript
 // Javascript
 // webdriver.io example
-let contexts = driver.contexts();
+let contexts = driver.getContexts();
 
 // wd example
 let contexts = await driver.contexts();
@@ -45,7 +45,11 @@ $contexts = $driver->contexts();
 
 ```csharp
 // C#
-// TODO C# sample
+List<string> AllContexts = new List<string>();
+     foreach (var context in (driver.Contexts))
+     {
+         AllContexts.Add(context);
+     }
 
 ```
 
